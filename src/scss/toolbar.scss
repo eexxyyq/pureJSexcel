@@ -1,0 +1,26 @@
+//подключение переменных и миксинов
+@import "variables";
+@import "mixins";
+
+//стили для тулбара
+.excel__toolbar {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: $header-height;
+  height: $toolbar-height;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  //стили для кнопок
+  .button {
+    @include button();
+  }
+  //разделитель
+  .space-cutter {
+    border-left: 1px solid $border-color;
+    margin: 0 10px;
+  }
+}
