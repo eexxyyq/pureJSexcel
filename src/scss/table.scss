@@ -1,0 +1,68 @@
+//подключение переменных и миксинов
+@import "variables";
+@import "mixins";
+//стили для основной таблицы
+.excel__table {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: $header-height + $toolbar-height + $formula-height;
+  overflow-x: auto;
+  font-size: 18px;
+  padding-bottom: 4px;
+  //стиль для всех строк
+  .row {
+    display: flex;
+    flex-direction: row;
+    min-height: 24px;
+    height: $row-height;
+  }
+  //стиль для ячейки с цифровой нумерацией
+  .row-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: $info-cell-width;
+    height: 100%;
+    border: 1px solid $border-color;
+    background: #f8f9fa;
+    border-top: none;
+  }
+  //стиль для всех остальных ячеек
+  .row-data {
+    display: flex;
+  }
+  //стиль для ячеек с буквенной нумерацией
+  .column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $border-color;
+    background: #f8f9fa;
+    min-width: 40px;
+    width: $cell-width;
+    height: 100%;
+    border-left: none;
+    border-top: none;
+  }
+  //стиль ячеек
+  .cell {
+    min-width: 40px;
+    width: $cell-width;
+    padding: 5px;
+    height: 100%;
+    border: 1px solid #e2e3e3;
+    border-left: none;
+    border-top: none;
+    color: #111;
+    white-space: nowrap;
+    outline: none;
+    //стиль для выбранной ячейки
+    &.selected {
+      border: none;
+      outline: 2px solid #3c74ff;
+      z-index: 2;
+    }
+
+  }
+}
