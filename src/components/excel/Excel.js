@@ -2,7 +2,7 @@ import {$} from "@/core/Dom";
 
 export default class Excel {
     constructor(selector, options) {
-        this.$el = document.querySelector(selector)
+        this.$el = $(selector)
         this.components = options.components || []
     }
 
@@ -22,7 +22,7 @@ export default class Excel {
             // который прокидывается выше до конструктора DomListener`a
             const component = new Component($el)
             // в полученный контейнер передаем разметку компонента
-            $el.innerHTML = component.toHtml()
+            $el.html(component.toHtml())
             //добавляем в основной root элемент страницы все компоненты и их разметку
             $root.append($el)
         })
